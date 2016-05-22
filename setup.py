@@ -16,6 +16,7 @@ with open('HISTORY.rst') as history_file:
 
 requirements = [
     # TODO: put package requirements here
+    'click'
 ]
 
 test_requirements = [
@@ -54,5 +55,9 @@ setup(
         'Programming Language :: Python :: 3.5',
     ],
     test_suite='tests',
-    tests_require=test_requirements
+    tests_require=test_requirements,
+    entry_points='''
+        [console_scripts]
+        bilge=bilge.bilge:cli
+    '''
 )
