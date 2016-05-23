@@ -10,7 +10,7 @@ DOWNLOADS_DIR = os.path.join(os.path.expanduser('~'), 'Documents/_Downloads')
 
 def create_glob(patterns):
     if type(patterns) == list:
-        return [
+        desktop = [
             x for x in [
                 x for y in [
                     glob.glob(os.path.join(DESKTOP_DIR, pattern))
@@ -18,8 +18,17 @@ def create_glob(patterns):
                 ] for x in y
             ]
         ]
+        downloads = [
+            x for x in [
+                x for y in [
+                    glob.glob(os.path.join(DOWNLOADS_DIR, pattern))
+                    for pattern in patterns
+                ] for x in y
+            ]
+        ]
+        return desktop + downloads
     else:
-        return glob.glob(os.path.join(DESKTOP_DIR, patterns))
+        return glob.glob(os.path.join(DESKTOP_DIR, patterns)) + glob.glob(os.path.join(DOWNLOADS_DIR, patterns))
 
 
 def add_unsorted(dictionary):
