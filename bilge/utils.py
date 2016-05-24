@@ -6,6 +6,7 @@ import glob
 
 DESKTOP_DIR = os.path.join(os.path.expanduser('~'), 'Documents/_Desktop')
 DOWNLOADS_DIR = os.path.join(os.path.expanduser('~'), 'Documents/_Downloads')
+BILGE_DIR = os.path.join(os.path.expanduser('~'), 'Documents/_Bilge')
 
 
 def create_glob(patterns):
@@ -33,7 +34,8 @@ def create_glob(patterns):
 
 def add_unsorted(dictionary):
     sorted_files = [x for y in [value for key, value in dictionary.iteritems()] for x in y]
-    return [item for item in glob.glob(os.path.join(DESKTOP_DIR, '*/*')) if item not in sorted_files]
+    all_files = glob.glob(os.path.join(DESKTOP_DIR, '*/*')) + glob.glob(os.path.join(DOWNLOADS_DIR, '*/*'))
+    return [item for item in all_files if item not in sorted_files]
 
 
 def create_sort_plan():
