@@ -8,7 +8,7 @@ from random import randint
 
 import click
 
-from utils import create_sort_plan, BILGE_DIR, DESKTOP_DIR, DOWNLOADS_DIR
+from utils import create_sort_plan, BILGE_DIR
 
 
 @click.group()
@@ -44,8 +44,10 @@ def sort():
     """
     Sort items into category folder structure
     """
+    # Sort Files from Desktop and Downloads folders
     click.echo(click.style("\n[+] Sorting files...\n", fg="white", bold="true"))
     sort_plan = create_sort_plan()
+    print sort_plan
 
     for key, value in sort_plan.iteritems():
         if not os.path.exists(BILGE_DIR):
@@ -64,6 +66,3 @@ def sort():
 
                 shutil.move(item, disambiguate)
                 shutil.move(disambiguate, sort_dir)
-
-    shutil.rmtree(DESKTOP_DIR)
-    shutil.rmtree(DOWNLOADS_DIR)
