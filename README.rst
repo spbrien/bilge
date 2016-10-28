@@ -2,21 +2,8 @@
 Bilge
 ===============================
 
-.. image:: https://img.shields.io/pypi/v/bilge.svg
-        :target: https://pypi.python.org/pypi/bilge
 
-.. image:: https://img.shields.io/travis/spbrien/bilge.svg
-        :target: https://travis-ci.org/spbrien/bilge
-
-.. image:: https://readthedocs.org/projects/bilge/badge/?version=latest
-        :target: https://readthedocs.org/projects/bilge/?badge=latest
-        :alt: Documentation Status
-
-
-Get rid of useless file buildup without causing problems
-
-* Free software: ISC license
-* Documentation: https://bilge.readthedocs.org.
+Get rid of useless file buildup
 
 Features
 --------
