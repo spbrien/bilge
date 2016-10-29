@@ -47,7 +47,6 @@ def sort():
     # Sort Files from Desktop and Downloads folders
     click.echo(click.style("\n[+] Sorting files...\n", fg="white", bold="true"))
     sort_plan = create_sort_plan()
-    print sort_plan
 
     for key, value in sort_plan.iteritems():
         if not os.path.exists(BILGE_DIR):
