@@ -7,7 +7,6 @@ import glob
 DESKTOP_DIR = os.path.join(os.path.expanduser('~'), 'Desktop')
 DOWNLOADS_DIR = os.path.join(os.path.expanduser('~'), 'Downloads')
 BILGE_DIR = os.path.join(os.path.expanduser('~'), 'Documents/_Bilge')
-print DOWNLOADS_DIR
 
 
 def create_glob(patterns):
